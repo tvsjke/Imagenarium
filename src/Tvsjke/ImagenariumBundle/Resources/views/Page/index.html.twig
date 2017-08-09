@@ -1,0 +1,29 @@
+{# src/Tvsjke/ImagenariumBundle/Resources/views/Page/index.html.twig #}
+{% extends 'ImagenariumBundle::layout.html.twig' %}
+
+{% block body %}
+    {% for post in posts %}
+        <article class="post">
+            <h2>{{ post.title }}</h2>
+
+            <p class="post-metadata">
+                <span class="metadata"><i class="fa fa-user"></i> {{ post.category}}</span>
+            </p>
+
+            {{ post.description }}
+            <p>
+                <a href="{{ path('remove', {'id': post.id}) }}">
+                    <button type="button">Delete</button>
+                </a>
+            </p>
+        </article>
+    {% else %}
+        <div class="well">There are no posts at this moment</div>
+    {% endfor %}
+
+    {% if posts.haveToPaginate %}
+        <div class="navigation text-center">
+            {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'blog_index_paginated'}) }}
+        </div>
+    {% endif %}
+{% endblock %}

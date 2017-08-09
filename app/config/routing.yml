@@ -1,0 +1,7 @@
+imagenarium:
+    resource: "@ImagenariumBundle/Controller"
+    type: annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
