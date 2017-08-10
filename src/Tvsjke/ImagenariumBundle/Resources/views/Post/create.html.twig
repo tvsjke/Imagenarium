@@ -1,0 +1,24 @@
+{# src/Tvsjke/ImagenariumBundle/Resources/views/Page/create.html.twig #}
+{% extends 'ImagenariumBundle::layout.html.twig' %}
+
+{% block title %}Create{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Новый пост</h1>
+    </header>
+
+    {{ form_start(form, { 'action': path('create'), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.title) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.image) }}
+    {{ form_row(form.description) }}
+
+    {{ form_rest(form) }}
+
+    <input type="submit" value="Save" />
+
+
+{% endblock %}

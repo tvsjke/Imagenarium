@@ -5,9 +5,7 @@ namespace Tvsjke\ImagenariumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Symfony\Component\Validator\Mapping\ClassMetadata;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="Tvsjke\ImagenariumBundle\Repository\PostRepository")
@@ -15,7 +13,7 @@ use Symfony\Component\Validator\Constraints\Length;
  */
 class Post {
 
-  const NUM_ITEMS = 10;
+  const NUM_ITEMS = 5;
 
   /**
    * @var int
@@ -30,6 +28,8 @@ class Post {
    * @var string
    *
    * @ORM\Column(type="string")
+   *
+   * @Assert\NotBlank(message="Should not be empty")
    */
   private $title;
 
@@ -37,6 +37,8 @@ class Post {
    * @var string
    *
    * @ORM\Column(type="string")
+   *
+   * @Assert\NotBlank(message="Should not be empty")
    */
   private $category;
 
@@ -44,6 +46,8 @@ class Post {
    * @var string
    *
    * @ORM\Column(type="text")
+   *
+   * @Assert\NotBlank(message="Should not be empty")
    */
   private $description;
 
@@ -51,6 +55,9 @@ class Post {
    * @var string
    *
    * @ORM\Column(type="string")
+   *
+   * @Assert\NotBlank(message="Please, upload the image")
+   * @Assert\File(maxSize="5242880", mimeTypes={ "image/jpeg", "image/jpg", "image/png", "image/gif" })
    */
   private $image;
 
@@ -100,12 +107,5 @@ class Post {
    */
   public function setImage($image) {
     $this->image = $image;
-  }
-
-  public static function loadValidatorMetadata(ClassMetadata $metadata) {
-    $metadata->addPropertyConstraint('title', new NotBlank());
-    $metadata->addPropertyConstraint('category', new NotBlank());
-    $metadata->addPropertyConstraint('image', new NotBlank());
-    $metadata->addPropertyConstraint('description', new Length(['min' => 10]));
   }
 }

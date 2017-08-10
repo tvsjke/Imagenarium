@@ -1,0 +1,166 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body { line-height: 1;font-family: Arial, Helvetica, sans-serif;font-size: 12px; width: 100%; height: 100%; color: #000; font-size: 14px; }
+
+a {
+	text-decoration: none;
+}
+
+#wrapper {
+	margin: 10px auto; width: 1000px;
+}
+
+#header {
+	margin-bottom: 80px;
+}
+#header h2 {
+	font-family: 'Irish Grover', cursive; font-size: 92px; text-align: center; line-height: 110px;
+}
+#header h2 a {
+	color: #000;
+}
+
+.main-col {
+	width: 100%; margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+.well {
+	font-size: 22px;
+	margin-top: 40px;
+}
+
+#add_button {
+	height: 38px;
+	padding: 0 15px;
+	color: #fff;
+	border-radius: 3px;
+	background-color: #79c36c;
+	vertical-align: middle;
+	font: 15px/38px Tahoma,Helvetica,Arial,sans-serif;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+}
+#add_button:hover {
+	background-color: #67bb58;
+}
+#add_button > img {
+	vertical-align: text-bottom;
+	animation: motorback 0.2s ease-out;
+}
+#add_button > a {
+	color: #fff;
+	font: 19px Tahoma, Arial, sans-serif;
+}
+
+.post {
+	margin: 40px 0 60px 0;
+}
+.post-header > * {
+	display: inline-block;
+}
+.post-header h2 {
+	color: #777;
+	font-size: 20px;
+	line-height: 25px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.post-header a {
+	margin-left: 4px;
+}
+.post-header button, input[type="submit"] {
+	padding: 2px 6px;
+	border: 1px solid;
+	border-top-color: #c9c9c9;
+	border-right-color: #bcbcbc;
+	border-bottom-color: #a8a8a8;
+	border-left-color: #bcbcbc;
+	color: #666;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	cursor: pointer;
+	text-shadow: 0 1px 0 #fff;
+}
+.post-header button:hover, input[type="submit"]:hover {
+	color: #333;
+	border-color: #999;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.post-category a {
+	font-size: 11px;
+	padding: 0 4px 1px;
+	margin: 0 2px 0 0;
+	line-height: 12px;
+	background: -webkit-linear-gradient(bottom,#f3f3f3 100%,#f3f3f3 100%);
+	background: linear-gradient(to top,#f3f3f3 100%,#f3f3f3 100%);
+	color: #666;
+	border: 1px solid;
+	border-color: #e0e0e0 #c4c4c4 #adadad #cecece;
+	border-radius: 3px;
+}
+.post-image {
+	margin: 20px 0;
+}
+.post-image img {
+	width: 100%;
+	border-radius: 3px;
+}
+.post-body {
+	color: #2e2e2e;
+	font-family: Tahoma,Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: left;
+}
+.pagination > * {
+	display: inline-block;
+	margin: 0 5px;
+}
+.pagination li.disabled {
+	display:none;
+}
+.pagination li.active {
+	color: #79c36c;
+}
+
+#search-form {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+#search-form input {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#search-form input[name="q"] {
+	height: 34px;
+	width: 200px;
+	font-size: 20px;
+	padding: 0 5px;
+}
+
+#search-form input[type="submit"] {
+	width: 100px;
+	margin-left: 0;
+	height: 38px;
+}
+
+
+form { font-size: 16px; }
+form div { clear: left; margin-bottom: 10px; }
+form label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+form input[type="text"],
+form input[type="email"]
+{ width: 500px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form textarea { width: 500px; height: 150px; line-height: 26px; font-size: 20px; }
+form input[type="submit"] { margin-left: 110px; width: 508px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form ul li { color: #ff0000; margin-bottom: 5px; }

@@ -1,14 +1,14 @@
-{# src/Tvsjke/ImagenariumBundle/Resources/views/Page/add.html.twig #}
+{# src/Tvsjke/ImagenariumBundle/Resources/views/Page/edit.html.twig #}
 {% extends 'ImagenariumBundle::layout.html.twig' %}
 
-{% block title %}Add{% endblock%}
+{% block title %}Edit{% endblock%}
 
 {% block body %}
     <header>
-        <h1>Новый пост</h1>
+      <h1>Edit post</h1>
     </header>
 
-    {{ form_start(form, { 'action': path('create'), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+    {{ form_start(form, { 'action': path('edit', {'id': form.vars.value.id}), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
     {{ form_errors(form) }}
 
     {{ form_row(form.title) }}
@@ -18,7 +18,7 @@
 
     {{ form_rest(form) }}
 
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Save" />
 
 
 {% endblock %}

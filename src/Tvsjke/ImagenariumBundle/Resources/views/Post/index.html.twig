@@ -1,0 +1,53 @@
+{# src/Tvsjke/ImagenariumBundle/Resources/views/Page/index.html.twig #}
+{% extends 'ImagenariumBundle::layout.html.twig' %}
+
+{% block body %}
+    <div id="add_button">
+        <img src="{{ asset('add_button.png') }}" alt="plus" />
+        <a href="{{ path('create') }}">add post</a>
+    </div>
+    <form action="{{ path('search') }}" method="get" id="search-form">
+        <div>
+            <input name="q" type="text" class="form-control search-field" autocomplete="off" autofocus>
+            <input type="submit" value="Search" />
+        </div>
+    </form>
+
+    <div class="posts">
+    {% for post in posts %}
+        <div class="post">
+
+            <div class="post-header">
+                <h2>{{ post.title }}</h2>
+                <a href="{{ path('edit', {'id': post.id}) }}">
+                    <button type="button">Edit</button>
+                </a>
+                <a href="{{ path('remove', {'id': post.id}) }}">
+                    <button type="button">Delete</button>
+                </a>
+            </div>
+
+            <div class="post-category">
+                <a>{{ post.category }}</a>
+            </div>
+
+            <div class="post-image">
+                <img src="{{ asset(images_directory ~ post.image) }}" alt="{{ post.image }}" />
+            </div>
+
+            <div class="post-body">
+                <p>{{ post.description }}</p>
+            </div>
+
+        </div>
+    {% else %}
+        <div class="well">Nothing is perfect</div>
+    {% endfor %}
+    </div>
+
+    {% if posts.haveToPaginate is defined and posts.haveToPaginate%}
+        <div class="navigation text-center">
+            {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'home_paginated'}) }}
+        </div>
+    {% endif %}
+{% endblock %}
